@@ -1,118 +1,59 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { StyleSheet, Text, View, Button } from 'react-native';
+import FlexBox from './src/components/FlexBox';
+import Forums from './src/components/Student_forums';
+import WelcomePage from './src/components/WelcomePage';
+import Student_event from './src/components/Student_event';
+import PageEvents from './src/components/Student_event';
+import Profile1 from './src/components/Profile1';
+import Profile2 from './src/components/Profile2';
+import AppStateProvider from './src/provider/AppState';
+import WelcomePageMain from './src/components/WelcomePage';
+import LandingPage from './src/components/LandingPage';
+import LoginPage from './src/components/LoginPage';
+import SignUpPage from './src/components/SignUpPage';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import "./src/config/firebase";
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+const MainStack = createNativeStackNavigator()
 
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+
+export default function App() {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View style ={styles.container}>
+   
+    
+   <NavigationContainer>
+      <AppStateProvider>
+        <MainStack.Navigator
+          initialRouteName="Landing"
+          screenOptions={{
+            headerShown: false,
+          }}>
+          {/* Logged out pages */}
+          <MainStack.Screen name="Landing" component={LandingPage} />
+          <MainStack.Screen name="SignUp" component={SignUpPage}/>
+          <MainStack.Screen name="Login" component={LoginPage} />
+
+          {/* Logged in pages */}
+          <MainStack.Screen name="AfterLogin" component={WelcomePage} />
+        </MainStack.Navigator>
+      </AppStateProvider>
+    </NavigationContainer>
+     
+   
+    
+
     </View>
   );
 }
 
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
+  container: {
+    flex : 1,
+    backgroundColor: '#fff',
   },
 });
-
-export default App;
