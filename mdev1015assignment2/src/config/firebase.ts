@@ -1,39 +1,16 @@
 import firebase from '@react-native-firebase/app';
-import {Platform} from 'react-native';
 
-// Your secondary Firebase project credentials for Android...
-const androidCredentials = {
-  clientId: '',
-  appId: '',
-  apiKey: '',
-  databaseURL: '',
-  storageBucket: '',
-  messagingSenderId: '',
-  projectId: '',
+const firebaseConfig = {
+  apiKey: 'AIzaSyC46-wRww6znltIEmySf3gmN7FXFc83teM',
+  authDomain: 'react-native-79228.firebaseapp.com',
+  projectId: 'react-native-79228',
+  storageBucket: 'react-native-79228.appspot.com',
+  messagingSenderId: '37984021705',
+  appId: '1:37984021705:web:c81464b261cf20afbd3118',
+  measurementId: 'G-E287BKH7ZR',
+  databaseURL: 'https://react-native-79228.firebaseio.com',
 };
 
-// Your secondary Firebase project credentials for iOS...
-const iosCredentials = {
-  clientId: '',
-  appId: '',
-  apiKey: '',
-  databaseURL: '',
-  storageBucket: '',
-  messagingSenderId: '',
-  projectId: '',
-};
-
-// Select the relevant credentials
-const credentials = Platform.select({
-  android: androidCredentials,
-  ios: iosCredentials,
-});
-
-const config = {
-  name: 'SECONDARY_APP',
-};
-
-// await firebase.initializeApp(credentials, config);
 if (!firebase.apps.length) {
-  firebase.initializeApp(credentials, config);
+  firebase.initializeApp(firebaseConfig);
 }
