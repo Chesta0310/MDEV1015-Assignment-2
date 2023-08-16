@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "37984021705",
+    "project_id": "react-native-79228",
+    "storage_bucket": "react-native-79228.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37984021705:android:2f9995993140382cbd3118",
+        "android_client_info": {
+          "package_name": "com.example.finalproject_main1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37984021705-b6tkjss069ne2s6sfr9cq11caevta0l7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXosoxKMVFQm6BqOPTcVi3fEOAZQtCzgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37984021705-b6tkjss069ne2s6sfr9cq11caevta0l7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "37984021705-dvm5ue09vm5a837qjbokfft9s2b9195o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.mdev1015assignment2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37984021705:android:8c4a52d4c188d1bcbd3118",
+        "android_client_info": {
+          "package_name": "com.mdev1015assignment2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37984021705-b6tkjss069ne2s6sfr9cq11caevta0l7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXosoxKMVFQm6BqOPTcVi3fEOAZQtCzgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37984021705-b6tkjss069ne2s6sfr9cq11caevta0l7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "37984021705-dvm5ue09vm5a837qjbokfft9s2b9195o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.mdev1015assignment2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
