@@ -34,6 +34,12 @@ export default function App() {
 
             {/* Logged in pages */}
             <MainStack.Screen name="AfterLogin" component={WelcomePage} />
+            <MainStack.Screen name="Forums" component={Forums} />
+            <MainStack.Screen name="FlexBox" component={FlexBox} />
+            <MainStack.Screen name="Events" component={PageEvents} />
+            <MainStack.Screen name="Profile" component={Profile1} />
+            <MainStack.Screen name="Profile2" component={Profile2} />
+            <MainStack.Screen name="Student_event" component={Student_event} />
           </MainStack.Navigator>
         </AuthProvider>
       </NavigationContainer>

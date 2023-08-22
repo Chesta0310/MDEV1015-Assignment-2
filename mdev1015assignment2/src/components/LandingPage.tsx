@@ -11,18 +11,13 @@ import {
 import {useAuth} from '../context/AuthContext';
 
 const LandingPage = ({navigation}) => {
-  const [status, setStatus] = useState('');
-  const {user, signOut} = useAuth();
+  const {user} = useAuth();
 
-  async function doSignOut() {
-    setStatus('Logging Out');
-    try {
-      await signOut();
-      setStatus('');
-    } catch (error) {
-      console.error('Error signing out:', error);
-      setStatus('Unable to logout');
-    }
+  if (user) {
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'AfterLogin'}],
+    });
   }
 
   return (
@@ -35,21 +30,10 @@ const LandingPage = ({navigation}) => {
         style={{width: '100%'}}
       />
       <Text style={styles.header}>Welcome To the Georgian College</Text>
-      {user ? (
-        <>
-          <Text style={styles.loggedInUser}>Logged In User: {user.email}</Text>
-          <Text>{status}</Text>
-          <Button title="Sign Up" onPress={doSignOut} />
-        </>
-      ) : (
-        <View style={styles.btnWrapper}>
-          <Button title="Login" onPress={() => navigation.navigate('Login')} />
-          <Button
-            title="Sign Up"
-            onPress={() => navigation.navigate('SignUp')}
-          />
-        </View>
-      )}
+      <View style={styles.btnWrapper}>
+        <Button title="Login" onPress={() => navigation.navigate('Login')} />
+        <Button title="Sign Up" onPress={() => navigation.navigate('SignUp')} />
+      </View>
     </View>
   );
 };
